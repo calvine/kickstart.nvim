@@ -425,14 +425,6 @@ require('lazy').setup({
       { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
-      -- Make Terraformls work...
-      require('lspconfig').terraformls.setup {}
-      vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-        pattern = { '*.tf', '*.tfvars' },
-        callback = function()
-          vim.lsp.buf.format()
-        end,
-      })
       -- Brief Aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -585,6 +577,9 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        -- terraformls = {
+        --   filetypes = { 'tf', 'terraform', 'terraform-vars' },
+        -- },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -853,6 +848,10 @@ require('lazy').setup({
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
+    },
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      'nvim-treesitter/nvim-treesitter-context',
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
