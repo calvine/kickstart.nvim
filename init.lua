@@ -655,7 +655,7 @@ require('lazy').setup({
       formatters_by_ft = {
         bash = { { 'beautysh', 'shfmt' } },
         lua = { 'stylua' },
-        markdown = { 'mdformat', 'cbfmt' },
+        markdown = { 'prettierd', 'cbfmt', 'mdslw' },
         go = { 'goimports' },
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'pyink' },
