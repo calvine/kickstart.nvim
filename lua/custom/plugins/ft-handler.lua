@@ -1,14 +1,28 @@
-local mfeh = require 'custom/util/handle_template_file'
--- TODO: come back and claen this up? convert util function to just return expected file type and have the function here set the filetype...
--- TODO: Perhaps export a function to enable this and disable this? that way we can enable it in the init file? Am I overthinking this?
-local ftgroup = vim.api.nvim_create_augroup('ftgroup', { clear = true })
-vim.api.nvim_create_autocmd({ 'BufEnter', 'BufRead' }, {
-  pattern = { '*.*.tpl', '*.*.tftpl' },
-  group = ftgroup,
-  callback = function(args)
-    -- print 'This is a test of ft autocommand'
-    mfeh.handleTemplateFileSetFileType(args.buf, args.file)
-  end,
-})
-
-return {}
+local getMultiExtensionTarget = require('custom/util/handle_template_file').getMultiExtensionTarget
+-- You can add your own plugins here or in other files in this directory!
+--  I promise not to create any merge conflicts in this directory :)
+--
+-- See the kickstart.nvim README for more information
+return {
+  {
+    'calvine/ft-mapper.nvim',
+    -- dir = '/home/calvin/code/nvim-dev/ft-mapper.nvim', -- lua/custom/ft-mapper',
+    -- dev = true,
+    -- lazy = true,
+    opts = {
+      {
+        name = 'multi-extension-template-file',
+        patterns = { '*.*.tpl', '*.*.tftpl' },
+        handler = function(bufId, filename)
+          local target_type = getMultiExtensionTarget(filename, 1)
+          return target_type
+        end,
+      },
+      {
+        name = 'terraform',
+        patterns = { '*.tf' },
+        file_type = 'terraform',
+      },
+    },
+  },
+}
