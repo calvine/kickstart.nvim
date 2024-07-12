@@ -657,6 +657,8 @@ require('lazy').setup({
         lua = { 'stylua' },
         markdown = { 'prettierd', 'cbfmt', 'mdslw' },
         go = { 'goimports' },
+        json = { { 'prettierd', 'prettier' } },
+        yaml = { { 'prettierd', 'prettier' } },
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'pyink' },
         --
