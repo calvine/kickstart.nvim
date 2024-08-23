@@ -7,7 +7,7 @@ local stringUtils = require 'custom/util/string_util'
 ---@param offset number
 ---@return string
 local function getMultiExtensionTarget(fileName, offset)
-  local parts = stringUtils.split_string(fileName, '/')
+  local parts = stringUtils.split_string(fileName, '/', false)
   local lastPathPart = parts[#parts]
   local filename_parts = stringUtils.split_string(lastPathPart, '.', true)
   if #filename_parts > 2 then
