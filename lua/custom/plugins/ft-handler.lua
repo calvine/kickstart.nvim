@@ -23,6 +23,11 @@ return {
         patterns = { '*.tf' },
         file_type = 'terraform',
       },
+      {
+        name = 'mdx_markdown',
+        patterns = { '*.mdx' },
+        file_type = 'markdown',
+      },
     },
   },
 }
