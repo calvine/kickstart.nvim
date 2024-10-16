@@ -667,6 +667,9 @@ require('lazy').setup({
         go = { 'goimports' },
         json = { { 'prettierd', 'prettier' } },
         yaml = { { 'prettierd', 'prettier' } },
+        html = { { 'prettierd', 'prettier' } },
+        css = { { 'prettierd', 'prettier' } },
+        astro = { { 'prettierd', 'prettier' } },
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'pyink' },
         --
