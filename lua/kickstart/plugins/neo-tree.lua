@@ -24,5 +24,18 @@ return {
         },
       },
     },
+    default_component_configs = {
+      name = {
+        use_git_status_colors = true,
+      },
+      git_status = {
+        symbols = {
+          added = 'A',
+          modified = 'M',
+          deleted = 'D',
+          renamed = 'R',
+        },
+      },
+    },
   },
 }
