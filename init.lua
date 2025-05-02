@@ -667,21 +667,21 @@ require('lazy').setup({
         }
       end,
       formatters_by_ft = {
-        bash = { { 'beautysh', 'shfmt' } },
+        bash = { 'beautysh', 'shfmt', stop_after_first = true },
         lua = { 'stylua' },
         markdown = { 'prettierd', 'cbfmt', 'mdslw' },
         go = { 'goimports' },
-        json = { { 'prettierd', 'prettier' } },
-        yaml = { { 'prettierd', 'prettier' } },
-        html = { { 'prettierd', 'prettier' } },
-        css = { { 'prettierd', 'prettier' } },
-        astro = { { 'prettierd', 'prettier' } },
+        json = { 'prettierd', 'prettier', stop_after_first = true },
+        yaml = { 'prettierd', 'prettier', stop_after_first = true },
+        html = { 'prettierd', 'prettier', stop_after_first = true },
+        css = { 'prettierd', 'prettier', stop_after_first = true },
+        astro = { 'prettierd', 'prettier', stop_after_first = true },
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'pyink' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        javascript = { { 'prettierd', 'prettier' } },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
