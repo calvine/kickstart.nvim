@@ -493,8 +493,10 @@ require('lazy').setup({
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-      { 'williamboman/mason.nvim', opts = {} },
-      'williamboman/mason-lspconfig.nvim',
+      { 'williamboman/mason.nvim', version = '^1.0.0', opts = {} },
+      { 'williamboman/mason-lspconfig.nvim', version = '^1.0.0' },
+      -- { 'williamboman/mason.nvim', opts = {} },
+      -- 'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
@@ -862,18 +864,18 @@ require('lazy').setup({
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
 
--- <<<<<<< HEAD
---           -- Accept ([y]es) the completion.
---           --  This will auto-import if your LSP supports it.
---           --  This will expand snippets if the LSP sent a snippet.
---           ['<cr>'] = cmp.mapping.confirm { select = true },
--- =======
+      -- <<<<<<< HEAD
+      --           -- Accept ([y]es) the completion.
+      --           --  This will auto-import if your LSP supports it.
+      --           --  This will expand snippets if the LSP sent a snippet.
+      --           ['<cr>'] = cmp.mapping.confirm { select = true },
+      -- =======
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         -- Adjusts spacing to ensure icons are aligned
         nerd_font_variant = 'mono',
       },
--- >>>>>>> d350db2449da40df003c40d440f909d74e2d4e70
+      -- >>>>>>> d350db2449da40df003c40d440f909d74e2d4e70
 
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
@@ -972,7 +974,25 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'query', 'markdown', 'vim', 'vimdoc', 'go', 'php', 'javascript', 'typescript', 'hcl', 'terraform', 'html' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'query',
+        'markdown',
+        'vim',
+        'vimdoc',
+        'go',
+        'php',
+        'javascript',
+        'typescript',
+        'hcl',
+        'terraform',
+        'html',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
