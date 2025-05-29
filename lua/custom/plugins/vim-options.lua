@@ -7,6 +7,7 @@ vim.o.rnu = true
 
 vim.keymap.set('n', '<leader>x', ':so<CR>', { desc = 'Source current file' })
 
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show LSP Hover Docs' })
 vim.keymap.set('i', '<C-k>', vim.lsp.buf.hover, { desc = 'Show LSP Hover Docs' })
 vim.keymap.set('i', '<C-o>', '<C-x><C-o>', { desc = 'Auto Complete OmniFunc' })
 

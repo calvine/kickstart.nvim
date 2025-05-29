@@ -343,8 +343,9 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode' },
-        { '<leader>c_', hidden = true },
+        -- This used to be leader c
+        -- { '<leader>g', group = 'Code Navi[G]ation' },
+        -- { '<leader>g_', hidden = true },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>d_', hidden = true },
         { '<leader>r', group = '[R]ename' },
